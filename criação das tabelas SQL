@@ -1,0 +1,121 @@
+CREATE TABLE Gold.special_offer(
+special_offer_id INT,
+product_id INT,
+rowguid VARCHAR(100),
+modified_date DATE,
+CONSTRAINT PK_special_offer PRIMARY KEY(special_offer_id) 
+
+--------------------------------------------------------------------------------
+
+  CREATE TABLE Gold.sales_detail (
+    sales_order_id INT,
+    sales_order_detail_id INT,
+    carrier_tracking_number VARCHAR(20),
+    order_qtd INT,
+    product_id INT,
+    special_offer_id INT,
+    unit_price DECIMAL,
+    unit_price_discount DECIMAL,
+    line_total DECIMAL,
+    rowguid VARCHAR(100),
+    modified_date DATE,
+	CONSTRAINT PK_sales_detail PRIMARY KEY(sales_order_id)
+);
+
+---------------------------------------------------------------------------------
+
+  CREATE TABLE Gold.sales_header(
+sales_order_id INT,
+revision_number INT,
+ order_date DATE,
+ due_date DATE,
+ ship_date DATE,
+ status INT,
+ online_order_flag INT,
+ sales_order_number VARCHAR(10),
+ purchase_order_number VARCHAR(20),
+ account_number VARCHAR(30),
+ customer_id INT,
+ sales_person_id INT,
+ territory_id INT,
+ billTo_address_id INT,
+ ship_to_address_id INT,
+ ship_method_id INT,
+ credit_card_id INT,
+ credit_card_approval_code VARCHAR(30),
+ currency_rate_id INT,
+ sub_total DECIMAL,
+ tax_amt DECIMAL,
+ freight DECIMAL,
+ total_due DECIMAL,
+ comment TEXT,
+ rowguid VARCHAR(100),
+ modified_date DATE,
+ CONSTRAINT PK_sales_header PRIMARY KEY(sales_order_id)
+)
+
+  ---------------------------------------------------------------------------------------------
+
+
+
+  CREATE TABLE Gold.product (
+    product_id INT,
+    name VARCHAR(50),
+    product_number INT,
+    make_flag VARCHAR(1),
+    finishedGoods_flag INT,
+    color VARCHAR(255),
+    safety_stock_level INT,
+    reorder_point INT,
+    standard_cost FLOAT,
+    list_price FLOAT,
+    size VARCHAR(255),
+    size_unit_measure_code VARCHAR(255),
+    weight_unit_measure_code VARCHAR(255),
+    weight FLOAT,
+    days_to_manufacture INT,
+    product_line VARCHAR(2),
+    class VARCHAR(2),
+    style VARCHAR(2),
+    product_subcategory_id INT,  
+    product_model_id INT,        
+    sell_start_date DATE,
+    sell_end_date DATE,
+    discontinued_date VARCHAR(10),
+    rowguid VARCHAR(50),
+    modified_date DATE,
+	CONSTRAINT PK_product PRIMARY KEY(product_id)
+);
+
+    ----------------------------------------------------------------------------------------------------------------
+
+    CREATE TABLE Gold.person(
+business_entity_id int,
+person_type VARCHAR(10),
+name_style VARCHAR(10),
+title VARCHAR(10),
+first_name VARCHAR(50),
+middle_name VARCHAR(50),
+last_name VARCHAR(50),
+suffix VARCHAR(10),
+email_promotion INT,
+additional_contact_info TEXT,
+demographics text,
+rowguid VARCHAR(100),
+CONSTRAINT PK_person PRIMARY KEY(business_entity_id)
+)
+
+-----------------------------------------------------------------------------------------------------
+
+
+    --CREATE SCHEMA Gold
+CREATE TABLE Gold.customer (
+customer_id INT, 
+person_id INT,
+store_id INT,
+territory_id INT,
+account_number VARCHAR(30),
+rowguid VARCHAR(100),
+modified_date DATETIME,
+CONSTRAINT PK_customer PRIMARY KEY(customer_id)
+)
