@@ -6,7 +6,7 @@ Este projeto é parte do processo seletivo para Engenheiro de Dados da Rox Partn
 ## 📦 Conteúdo do projeto
 
 Este projeto contém 2 arquivos. São eles:
-- Database ER diagram.pdf: este é o arquivo de diagrama entidade-relacionamento das tabelas propostas no problema
+- Diagrama ER Rox Partner.pdf: este é o arquivo de diagrama entidade-relacionamento das tabelas propostas no problema
 - testeRoxJoabeRodrigues.ipynb: este é o código a ser executado e encontrar os resultados solicitados no problema
 
 
