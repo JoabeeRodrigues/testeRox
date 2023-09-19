@@ -1,0 +1,86 @@
+Tratamento dos dados.
+
+
+# Databricks notebook source
+from pyspark.sql.session import SparkSession
+
+# COMMAND ----------
+
+file_location = "/FileStore/tables"
+file_type = "csv"
+
+infer_schema = "true"
+first_row_is_header = "true"
+delimiter = ";"
+
+# COMMAND ----------
+
+Sales_SpecialOfferProduct = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(f'{file_location}/Sales_SpecialOfferProduct.csv')
+
+Sales_SpecialOfferProduct.registerTempTable("Sales_SpecialOfferProduct")
+
+display(Sales_SpecialOfferProduct)
+
+# COMMAND ----------
+
+Sales_SalesOrderHeader = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(f'{file_location}/Sales_SalesOrderHeader.csv')
+
+Sales_SalesOrderHeader.registerTempTable("Sales_SalesOrderHeader")
+
+display(Sales_SalesOrderHeader)
+
+# COMMAND ----------
+
+Sales_SalesOrderDetail = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(f'{file_location}/Sales_SalesOrderDetail.csv')
+
+Sales_SalesOrderDetail.registerTempTable("Sales_SalesOrderDetail")
+
+display(Sales_SalesOrderDetail)
+
+# COMMAND ----------
+
+Sales_Customer = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(f'{file_location}/Sales_Customer.csv')
+
+Sales_Customer.registerTempTable("Sales_Customer")
+
+display(Sales_Customer)
+
+# COMMAND ----------
+
+Production_Product = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(f'{file_location}/Production_Product.csv')
+
+Production_Product.registerTempTable("Production_Product")
+
+display(Production_Product)
+
+# COMMAND ----------
+
+Person_Person = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(f'{file_location}/Person_Person-2.csv')
+
+Person_Person.registerTempTable("Person_Person")
+
+display(Person_Person)
