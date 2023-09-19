@@ -19,7 +19,6 @@ Para fazer o upload, dentro do Databricks, vá em "Data", escolha a "Database", 
 ### 🔧 Instalação
 
 Não é necessária nenhuma instalação, desde que faça o upload dos arquivos .csv e do código .py para um Databricks e o execute.
-Para realizar o upload do código .py, dentro do Databricks vá em "Create", "Notebook", dê um nome, selecione Python como linguagem e atribua um cluster a este notebook. Depois de dar o "Create", vá em "Upload Data" e faça o upload de codigo_guilherme.py.
 
 
 ## ⚙️ Executando
